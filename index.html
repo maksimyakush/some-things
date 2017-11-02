@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content rotated">
+    <div class="one sqq">1</div>
+    <div class="two sqq">2</div>
+    <div class="three sqq">3</div>
+    <div class="four sqq">4</div>
+    <div class="five sqq">5</div>
+
+  </div>
+  <script>
+  let $=(item)=>document.querySelector(item)
+    document.querySelectorAll('.sqq').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        if ([...e.target.parentElement.children].some(a=>[...a.classList].includes('rotated1')) && ![...e.target.classList].includes('rotated1')) return;
+        e.target.classList.toggle('rotated1');
+      })
+    })
+  </script>
+</body>
+</html>
